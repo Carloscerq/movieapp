@@ -72,3 +72,17 @@
     font-size: 3em;
     transition: font-size 0.2s;
 }
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px){
+    .footerAbout{
+        display: none;
+    }
+    .footerItem {
+        padding-bottom: 3%;
+    }
+    .footerReturnTopIcon{
+        padding-top: 10px;
+    }
+}

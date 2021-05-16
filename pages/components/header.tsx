@@ -19,7 +19,6 @@ export default function Header() {
     //Function to update the theme
     const updateTheme = () => {
         dispatch(setTheme(theme))
-        console.log(theme)
     }
 
     // Get the correct icon
@@ -63,8 +62,8 @@ export default function Header() {
                         Autor
                     </Link>
                 </div>
-                <div className='headerIten'>
-                    <a href='https://github.com/Carloscerq/movie-albuns-site' className='headerIten'>Github</a>
+                <div className='headerIten headerItemSmallDesapear'>
+                    <a href='https://github.com/Carloscerq/movieapp'>Github</a>
                 </div>
                 <button onClick={() => updateTheme()} className="headerIten headerItensButton">
                     <FontAwesomeIcon className='fa-fw' icon={themeValue} />

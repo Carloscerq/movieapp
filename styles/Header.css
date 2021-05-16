@@ -35,4 +35,19 @@
     font-size: 1em;
     transition: font-size 0.2s;
     cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+
+@media (max-width: 575.98px){
+    .headerTitle {
+        font-size: 35px;
+        display: flex;
+        align-items: center;
+    }
+    .headerItemSmallDesapear{
+        display: none;
+    }
 }

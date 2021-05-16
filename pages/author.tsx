@@ -3,14 +3,22 @@ import Header from './components/header';
 import Footer from './components/footer';
 //Redux
 import { useSelector } from 'react-redux'
-import {RootState} from '../redux/reducer';
+import { RootState } from '../redux/reducer';
 //React Next
 import Image from 'next/image'
+import { useState, useEffect } from 'react';
+//Utils
+import windowSizeFunc from '../utils/windowSize';
 
 export default function Author() {
+    const theme = useSelector((state: RootState) => state.themes);
 
-    const theme = useSelector((state : RootState) => state.themes);
-    const imgSize = 700;
+    // Can't reuse from index bc can't use export here
+    const [windowSize, setWindowSize] = useState(1200);
+    useEffect(() => {
+        windowSizeFunc(window, setWindowSize);
+    }, []);
+
 
     return (
         <div>
@@ -27,8 +35,8 @@ export default function Author() {
                         <Image
                             className="AboutAuthorImg"
                             src='/Author.png'
-                            width={imgSize}
-                            height={imgSize}
+                            width={windowSize/2}
+                            height={windowSize/2}
                         />
                         <div className="AboutAuthorText">
                             <h1 className="AboutAuthorTitle">Quem Sou?</h1>

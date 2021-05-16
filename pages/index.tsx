@@ -7,6 +7,9 @@ import { useState, useEffect } from 'react';
 import {RootState} from '../redux/reducer';
 //Redux
 import { useSelector } from 'react-redux';
+//Utils
+import windowSizeFunc from '../utils/windowSize';
+
 
 export default function Search() {
     const [input, setInput] = useState('');
@@ -31,21 +34,13 @@ export default function Search() {
 
     const makeEmptySpace = (movieInfo) => {
         if (movieInfo.length == 0) {
-            return windowSize/3;
+            return windowSize;
         }
         return 0;
     };
 
     useEffect(() => {
-        // Handler to call on window resize
-        const handleResize = () => setWindowSize(window.innerWidth);
-        // Add event listener
-        window.addEventListener("resize", handleResize);
-        // Call handler right away so state gets updated with initial window size
-        handleResize();
-
-        // Remove event listener on cleanup
-        return () => window.removeEventListener("resize", handleResize);
+        windowSizeFunc(window, setWindowSize);
     }, []);
 
 
@@ -61,7 +56,18 @@ export default function Search() {
                         background-color: ${theme.buttonColor};
                     }
                     .searchTitleContainer {
-                        padding-bottom: ${EmptySpace}px;
+                        padding-bottom: ${(EmptySpace)/4}px;
+                    }
+                    @media (max-width: 575.98px){ 
+                        .searchTitleContainer {
+                            padding-bottom: ${(EmptySpace)/1.5}px;
+                        }
+                    }
+
+                    @media (max-width: 991.98px) {
+                        .searchTitleContainer {
+                            padding-bottom: ${(EmptySpace)/1.4}px;
+                        }
                     }
 
                 `}</style>
