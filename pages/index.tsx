@@ -4,13 +4,14 @@ import Footer from './components/footer';
 import SearchItem from './components/searchItem';
 //React
 import { useState, useEffect } from 'react';
+import {RootState} from '../redux/reducer';
 //Redux
 import { useSelector } from 'react-redux';
 
 export default function Search() {
     const [input, setInput] = useState('');
     const [movieInfo, setMovieInfo] = useState([]);
-    const theme = useSelector(state => state.themes);
+    const theme = useSelector((state : RootState) => state.themes);
     const [windowSize, setWindowSize] = useState(1200);
 
     const searchMovie = async () => {

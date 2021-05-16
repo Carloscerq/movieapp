@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 
 import themesReducer from './themeReducer';
 
-export default combineReducers({
+export const rootReducer = combineReducers({
     themes: themesReducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>;

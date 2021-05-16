@@ -3,12 +3,13 @@ import Header from './components/header';
 import Footer from './components/footer';
 //Redux
 import { useSelector } from 'react-redux'
+import {RootState} from '../redux/reducer';
 //React Next
 import Image from 'next/image'
 
 export default function Author() {
 
-    const theme = useSelector(state => state.themes);
+    const theme = useSelector((state : RootState) => state.themes);
     const imgSize = 700;
 
     return (

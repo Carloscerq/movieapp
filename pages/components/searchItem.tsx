@@ -3,25 +3,27 @@ import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Redux
 import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/reducer';
 
 export default function SearchItem(movieInfo) {
     const movie = { ...movieInfo.movie }
-    const theme = useSelector(state => state.themes);
+    const theme = useSelector((state: RootState) => state.themes);
 
-    const thumbFromRating = (rating:number) => {
+    const thumbFromRating = (rating: number) => {
         if (rating >= 7.0) {
             return faThumbsUp;
         }
         return faThumbsDown;
     }
 
-    const titleSize = (title:string)  => {
-        console.log(title.length)
-        if (title.length > 20){
-            return 13;
+    const titleSize = (title: string) => {
+        if (!typeof (title) == undefined) {
+            if (title.length > 20) {
+                return 13;
+            }
+            return 16;
         }
-        return 16;
-    } 
+    }
 
     const fontSize = titleSize(movie.title)
     const thumbIcon = thumbFromRating(movie.vote_average);

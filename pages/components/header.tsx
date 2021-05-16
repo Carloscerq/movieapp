@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme, THEME_D, THEME_L } from '../../redux/actions';
-
+import {RootState} from '../../redux/reducer';
 //Utils
 import { theme } from '../../utils/interfaces';
 
@@ -13,7 +13,7 @@ import { theme } from '../../utils/interfaces';
 import Link from 'next/link'
 
 export default function Header() {
-    const theme = useSelector(state => state.themes);
+    const theme = useSelector((state : RootState) => state.themes);
     const dispatch = useDispatch();
 
     //Function to update the theme
