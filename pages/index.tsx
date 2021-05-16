@@ -23,7 +23,6 @@ export default function Search() {
             let dataArr = data.results;
 
             setMovieInfo(dataArr.filter(movie => movie.poster_path).slice(0, 6))
-            console.log(movieInfo)
 
         } catch (err) {
             console.log(err);
@@ -31,7 +30,6 @@ export default function Search() {
     };
 
     const makeEmptySpace = (movieInfo) => {
-        console.log(movieInfo.length)
         if (movieInfo.length == 0) {
             return windowSize/3;
         }
@@ -89,7 +87,7 @@ export default function Search() {
                 </div>
             </div>
             <div className="searchItemContainer">
-                {movieInfo.map(movie => (
+                {movieInfo == [] ? '' : movieInfo.map(movie => (
                     <SearchItem movie={movie} key={movie.id} />
                 ))}
             </div>

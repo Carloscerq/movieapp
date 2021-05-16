@@ -4,10 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Redux
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducer';
+//React
+import { useState } from 'react';
+
 
 export default function SearchItem(movieInfo) {
     const movie = { ...movieInfo.movie }
     const theme = useSelector((state: RootState) => state.themes);
+    const [fontSize, setFontSize] = useState(titleSize(movie.title))
 
     const thumbFromRating = (rating: number) => {
         if (rating >= 7.0) {
@@ -16,16 +20,15 @@ export default function SearchItem(movieInfo) {
         return faThumbsDown;
     }
 
-    const titleSize = (title: string) => {
-        if (!typeof (title) == undefined) {
+    function titleSize(title: string) {
+        if (typeof (title) == 'string') {
             if (title.length > 20) {
-                return 13;
+                return 14;
             }
             return 16;
         }
     }
 
-    const fontSize = titleSize(movie.title)
     const thumbIcon = thumbFromRating(movie.vote_average);
     return (
         <div className="itemContainer">
