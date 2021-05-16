@@ -1,0 +1,74 @@
+.footerWrapper {
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid gainsboro;
+}
+
+.footerItem {
+    flex-grow: 1;
+    width: 30%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.footerAboutTitle {
+    margin-bottom: 0px;
+}
+
+.footerAboutText {
+    color: grey;
+    font-size: smaller;
+    text-align: justify;
+    margin-left: 2%;
+}
+
+.footerAbout {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.footerAboutTextWrapper {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 1%;
+}
+
+.footerReturnTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerReturnTopText {
+    margin: 3%;
+}
+
+.footerReturnTopIcon:hover{
+    font-size: 4em;
+    transition: font-size 0.2s;
+}
+
+.footerSocialMedia {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerSocialMediaIconsWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerSocialMediaIcon {
+    margin-left: 10px;
+}
+
+.footerSocialMediaIcon:hover {
+    font-size: 3em;
+    transition: font-size 0.2s;
+}

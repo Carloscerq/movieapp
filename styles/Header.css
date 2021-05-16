@@ -1,0 +1,38 @@
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerTitle {
+    font-size: 45px;
+    padding: 0.3%;
+    padding-left: 0.7%;
+    padding-bottom: 0.8%;
+}
+
+.headerItensWrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 6%;
+    justify-content: space-evenly;
+}
+
+.headerIten {
+    padding: 4%;
+}
+
+.headerItensButton {
+    margin: 10%;
+    border: 0px;
+    width: 40px;
+    border-radius: 4px;
+}
+
+.headerIten:hover {
+    font-size: 1em;
+    transition: font-size 0.2s;
+    cursor: pointer;
+}

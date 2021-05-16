@@ -1,0 +1,30 @@
+.searchItemContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px
+}
+
+.searchTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 400px;
+}
+
+.searchButton {
+    margin: 0.5%;
+    border: 0px;
+    width: 50%;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.searchInputContainer{
+    background-color: rgba(255,255,255,0.3);
+}
+
+.searchEngineContainer {
+    display: flex;
+    flex-direction: row;
+}
