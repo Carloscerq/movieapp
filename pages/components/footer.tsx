@@ -31,7 +31,7 @@ export default function Footer() {
                         <a href="https://github.com/Carloscerq/movie-albuns-site">
                             <FontAwesomeIcon icon={faGithubSquare} color="White" className="fa-2x footerSocialMediaIcon" />
                         </a>
-                        <a href="LINKEDIN">
+                        <a href="https://www.linkedin.com/in/carlos-eduardo-5153991aa/">
                             <FontAwesomeIcon icon={faLinkedin} color="White" className="fa-2x footerSocialMediaIcon" aria-hidden="true" />
                         </a>
                     </div>
